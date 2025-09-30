@@ -46,21 +46,6 @@ function RegisterForm() {
               </div>
             </div>
           </div>
-
-          {/* <div className="auth-register-stats">
-            <div className="auth-register-stat-item">
-              <h4>5000+</h4>
-              <p>Bệnh nhân tin tưởng</p>
-            </div>
-            <div className="auth-register-stat-item">
-              <h4>98%</h4>
-              <p>Tỷ lệ hài lòng</p>
-            </div>
-            <div className="auth-register-stat-item">
-              <h4>24/7</h4>
-              <p>Đặt lịch và hỗ trợ</p>
-            </div>
-          </div> */}
         </div>
       </div>
 
@@ -90,6 +75,16 @@ function RegisterForm() {
               ]}
             >
               <Input placeholder="Nhập email" size="large" />
+            </Form.Item>
+
+            <Form.Item
+              label="Tên người dùng"
+              name="UserName"
+              rules={[
+                { required: true, message: "Vui lòng nhập tên người dùng" },
+              ]}
+            >
+              <Input placeholder="Nhập họ và tên" size="large" />
             </Form.Item>
 
             <Form.Item

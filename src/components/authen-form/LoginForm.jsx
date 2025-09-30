@@ -15,7 +15,7 @@ const LoginForm = ({ onLogin, errorMessage }) => {
   const onFinish = async (values) => {
     // Xử lý đăng nhập ở đây, ví dụ chỉ chuyển trang sau khi submit thành công
     console.log("Login data:", values);
-    navigate("/dashboard"); // hoặc navigate("/") tùy role, ở đây mặc định về dashboard
+    navigate("/"); // hoặc navigate("/") tùy role, ở đây mặc định về dashboard
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -28,8 +28,8 @@ const LoginForm = ({ onLogin, errorMessage }) => {
         <h1>Chào mừng đến với HemaLink </h1>
         <p>Kết nối bệnh nhân và chẩn đoán</p>
         <p className="auth-login-subtitle">
-      Quản lý xét nghiệm thông minh – Chính xác, nhanh chóng và bảo mật
-    </p>
+          Quản lý xét nghiệm thông minh – Chính xác, nhanh chóng và bảo mật
+        </p>
       </div>
 
       {/* Right Side - Form Section */}

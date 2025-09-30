@@ -1,13 +1,14 @@
 import "./App.css";
 import LoginPage from "./page/login/Login";
 import RegisterPage from "./page/register/Register";
+import HomePage from "./page/home/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
+      element: <HomePage />, 
     },
     {
       path: "login",
