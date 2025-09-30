@@ -13,7 +13,11 @@ export default function ServiceSection() {
         </p>
         <div className="service-cards">
           <div className="service-card">
-            <div className="service-icon">🧪</div>
+            <img
+              src="/ServiceSectionImg/Xét nghiệm nhanh chóng.png"
+              alt="Xét nghiệm nhanh chóng"
+              className="service-icon-img"
+            />
             <div>
               <div className="service-card-title">Xét nghiệm nhanh chóng</div>
               <div className="service-card-desc">
@@ -23,7 +27,11 @@ export default function ServiceSection() {
             </div>
           </div>
           <div className="service-card">
-            <div className="service-icon">📋</div>
+            <img
+              src="/ServiceSectionImg/Quản lý hồ sơ.png"
+              alt="Quản lý hồ sơ dễ dàng"
+              className="service-icon-img"
+            />
             <div>
               <div className="service-card-title">Quản lý hồ sơ dễ dàng</div>
               <div className="service-card-desc">
@@ -33,7 +41,11 @@ export default function ServiceSection() {
             </div>
           </div>
           <div className="service-card">
-            <div className="service-icon">🛡️</div>
+            <img
+              src="/ServiceSectionImg/Đội ngũ giàu kinh nghiệm.png"
+              alt="Đội ngũ bác sĩ giàu kinh nghiệm"
+              className="service-icon-img"
+            />
             <div>
               <div className="service-card-title">
                 Đội ngũ bác sĩ giàu kinh nghiệm

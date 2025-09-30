@@ -76,13 +76,13 @@
    ========================= */
 .auth-register-container {
     display: grid;
-    grid-template-columns: 66% 34%;
-    /* min-height: 100vh; */
+    grid-template-columns: 60% 40%;
+    height: 100vh;
     width: 100%;
     position: relative;
     background: linear-gradient(135deg, #667eea 0%, #667eea 100%);
     overflow: hidden;
-    margin-top: 50px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .auth-register-container::before {
@@ -286,7 +286,7 @@
    ========================= */
 .auth-register-right {
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-    padding: 80px 60px;
+    padding: 48px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,9 +369,43 @@
    height: auto;
 }
 
+/* Back to home link in card header */
+.auth-register-card .ant-card-extra .auth-register-back-home {
+    color: #e0f2fe;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: all 0.2s ease;
+}
+
+.auth-register-card .ant-card-extra .auth-register-back-home:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 .auth-register-card .ant-card-body {
     padding: 40px;
-    height: 700px;
+    height: auto;
+}
+
+/* Compact vertical spacing to fit 100vh */
+.auth-register-form .ant-form-item {
+    margin-bottom: 16px;
+}
+
+.auth-register-card .ant-card-head {
+    padding: 24px 32px;
+}
+
+.auth-register-welcome-title {
+    margin-bottom: 12px;
+}
+
+.auth-register-welcome-subtitle {
+    margin-bottom: 28px;
 }
 
 .auth-register-form-row {
@@ -421,7 +455,7 @@
 }
 
 .auth-register-button {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
     border: none;
     border-radius: 12px;
     font-weight: 700;
@@ -468,7 +502,7 @@
 }
 
 .auth-register-login-link-a {
-    color: #3b82f6;
+    color: #2563eb;
     font-weight: 700;
     text-decoration: none;
     margin-left: 6px;
@@ -483,7 +517,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #3b82f6;
+    background: #2563eb;
     transition: width 0.3s ease;
 }
 
@@ -492,7 +526,7 @@
 }
 
 .auth-register-login-link-a:hover {
-    color: #1d4ed8;
+    color: #1e40af;
 }
 
 /* =========================

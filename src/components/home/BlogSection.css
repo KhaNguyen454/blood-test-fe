@@ -6,8 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 1200px;
-  margin: 0 auto 24px auto;
+  width: calc(100vw - 48px);
+  margin: 0 24px 24px 24px;
   flex-wrap: wrap;
 }
 .blog-badge {
@@ -48,9 +48,9 @@
   justify-content: center;
   margin-top: 16px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  width: calc(100vw - 48px);
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .blog-card {
   background: #fff;
@@ -63,6 +63,12 @@
   box-shadow: 0 2px 12px 0 rgba(59,130,246,0.06);
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(59,130,246,0.12);
+  border-color: #dbeafe;
 }
 .blog-img {
   width: 100%;

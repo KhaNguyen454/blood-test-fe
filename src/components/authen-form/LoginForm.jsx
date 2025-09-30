@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import api from "../../configs/axios";
 // import { GoogleLogin } from "@react-oauth/google";
 
-const LoginForm = ({ onLogin, errorMessage }) => {
+const LoginForm = ({ errorMessage }) => {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
 
@@ -25,17 +25,56 @@ const LoginForm = ({ onLogin, errorMessage }) => {
   return (
     <div className="auth-login-container">
       <div className="auth-login-welcome">
-        <h1>Chào mừng đến với HemaLink </h1>
-        <p>Kết nối bệnh nhân và chẩn đoán</p>
-        <p className="auth-login-subtitle">
-          Quản lý xét nghiệm thông minh – Chính xác, nhanh chóng và bảo mật
-        </p>
+        <div className="auth-login-welcome-content">
+          <h1 className="auth-login-welcome-title">
+            Chào mừng đến với HemaLink
+          </h1>
+          <p className="auth-login-welcome-subtitle">
+            Nền tảng quản lý xét nghiệm thông minh – chính xác, nhanh chóng và
+            bảo mật.
+          </p>
+
+          <div className="auth-login-welcome-features">
+            <div className="auth-login-welcome-feature">
+              <div className="auth-login-welcome-feature-icon">🧪</div>
+              <div className="auth-login-welcome-feature-text">
+                Kết quả xét nghiệm chuẩn xác và kịp thời
+              </div>
+            </div>
+            <div className="auth-login-welcome-feature">
+              <div className="auth-login-welcome-feature-icon">📊</div>
+              <div className="auth-login-welcome-feature-text">
+                Theo dõi hồ sơ và lịch sử xét nghiệm tiện lợi
+              </div>
+            </div>
+            <div className="auth-login-welcome-feature">
+              <div className="auth-login-welcome-feature-icon">🔒</div>
+              <div className="auth-login-welcome-feature-text">
+                Bảo mật dữ liệu bệnh nhân nhiều lớp
+              </div>
+            </div>
+            <div className="auth-login-welcome-feature">
+              <div className="auth-login-welcome-feature-icon">👨‍⚕️</div>
+              <div className="auth-login-welcome-feature-text">
+                Kết nối nhanh với đội ngũ y bác sĩ
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Right Side - Form Section */}
       <div className="auth-login-form-section">
         <div className="auth-login-form-wrapper">
-          <Card className="auth-login-card" title="ĐĂNG NHẬP">
+          <Card
+            className="auth-login-card"
+            title="ĐĂNG NHẬP"
+            extra={
+              <Link to="/" className="auth-login-back-home">
+                Quay về trang chủ
+              </Link>
+            }
+          >
             {errorMessage && (
               <div className="auth-login-error">{errorMessage}</div>
             )}
