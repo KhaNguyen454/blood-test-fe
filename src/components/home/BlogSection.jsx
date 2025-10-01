@@ -30,13 +30,13 @@ export default function BlogSection() {
   return (
     <div className="blog-section-bg">
       <div className="blog-section-header">
-        <div>
+        <div className="blog-title-group">
           <span className="blog-badge">Blog & Tin tức</span>
-          <h2 className="blog-title">Kiến thức sức khỏe</h2>
-          <p className="blog-desc">
-            Cập nhật thông tin y tế và lời khuyên từ chuyên gia
-          </p>
+          <h2 className="blog-title"></h2>
         </div>
+        <p className="blog-desc">
+        <h2 className="blog-title">Kiến thức sức khỏe</h2>
+        </p>
         <a href="/blog" className="blog-viewall">
           Xem tất cả &rarr;
         </a>

@@ -1,6 +1,6 @@
 .hero-section-bg {
   background: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
-  padding: 0 0 32px 0;
+  /* padding: 0 0 32px 0; */
 }
 
 .hero-section-content {
@@ -82,6 +82,7 @@
   font-weight: 500;
   text-align: left;
   max-width: 520px;
+  font-family: 'Geist', 'Inter', Arial, sans-serif;
 }
 
 .hero-btns {
@@ -89,6 +90,7 @@
   align-items: center;
   margin-bottom: 44px;
   gap: 14px;
+  
 }
 
 .hero-btn-primary {
@@ -102,6 +104,10 @@
   cursor: pointer;
   transition: background 0.2s;
   box-shadow: 0 2px 8px 0 rgba(59,130,246,0.08);
+  font-family: 'Geist', 'Inter', Arial, sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .hero-btn-primary:hover {

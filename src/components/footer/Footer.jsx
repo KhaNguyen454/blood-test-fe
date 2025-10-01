@@ -7,7 +7,11 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-col">
           <div className="footer-logo">
-            <span className="footer-logo-icon">🩺</span>
+            <img
+              src="/logo.png"
+              alt="HemaLink Logo"
+              className="footer-logo-img"
+            />
             <span className="footer-logo-text">HemaLink</span>
           </div>
           <p className="footer-desc">

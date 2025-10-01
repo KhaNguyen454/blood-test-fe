@@ -47,11 +47,20 @@ export default function DoctorSection() {
             </div>
             <div className="doctor-info">
               <div className="doctor-name">
-                {doc.name} <span className="doctor-rating">★ {doc.rating}</span>
+                <span>{doc.name}</span>
+                <span className="doctor-rating">
+                  <span style={{ color: "#3182CE" }}>★</span> {doc.rating}
+                </span>
               </div>
               <div className="doctor-specialty">{doc.specialty}</div>
-              <div className="doctor-exp">💗 {doc.exp}</div>
-              <div className="doctor-location">📍 {doc.location}</div>
+              <div className="doctor-exp">
+                <span style={{ color: "#A0AEC0", fontSize: "14px" }}>❤</span>{" "}
+                {doc.exp}
+              </div>
+              <div className="doctor-location">
+                <span style={{ color: "#A0AEC0", fontSize: "14px" }}>🏠︎</span>{" "}
+                {doc.location}
+              </div>
               <button className="doctor-btn">Xem hồ sơ</button>
             </div>
           </div>

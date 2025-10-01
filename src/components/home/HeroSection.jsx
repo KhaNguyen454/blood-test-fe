@@ -1,5 +1,6 @@
 // src/components/home/HeroSection.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
 export default function HeroSection() {
@@ -19,7 +20,9 @@ export default function HeroSection() {
             xác và kịp thời.
           </p>
           <div className="hero-btns">
-            <button className="hero-btn-primary">Đặt lịch xét nghiệm</button>
+            <Link to="/booking" className="hero-btn-primary">
+              Đặt lịch xét nghiệm
+            </Link>
             <button className="hero-btn-outline">Tìm hiểu thêm</button>
           </div>
           <div className="hero-stats">

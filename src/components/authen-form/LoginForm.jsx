@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Checkbox, Form, Input, Card } from "antd";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
+import { demoLogin } from "../../utils/auth";
 // import { useDispatch } from "react-redux";
 // import { login } from "../../redux/features/userSlice";
 // import { toast } from "react-toastify";
@@ -15,7 +16,10 @@ const LoginForm = ({ errorMessage }) => {
   const onFinish = async (values) => {
     // Xử lý đăng nhập ở đây, ví dụ chỉ chuyển trang sau khi submit thành công
     console.log("Login data:", values);
-    navigate("/"); // hoặc navigate("/") tùy role, ở đây mặc định về dashboard
+
+    // Demo: Lưu token và chuyển hướng
+    demoLogin();
+    navigate("/booking"); // Chuyển đến trang đặt lịch sau khi đăng nhập
   };
 
   const onFinishFailed = (errorInfo) => {

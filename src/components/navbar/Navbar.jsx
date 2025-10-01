@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { isAuthenticated, demoLogout } from "../../utils/auth";
 import "./Navbar.css";
 
 function Navbar() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setLoggedIn(isAuthenticated());
+  }, []);
+
+  const handleLogout = () => {
+    demoLogout();
+    setLoggedIn(false);
+  };
+
   return (
     <header className="navbar">
       <div className="navbar-inner">
@@ -22,14 +35,28 @@ function Navbar() {
           <a href="#services">Dịch vụ</a>
           <a href="#doctors">Bác sĩ</a>
           <a href="#blog">Blog</a>
+          <Link to="/booking" className="navbar-link">
+            Đặt lịch
+          </Link>
         </nav>
         <div className="navbar-actions">
-          <a href="/login" className="navbar-login">
-            Đăng nhập
-          </a>
-          <a href="/register" className="navbar-register">
-            Đăng ký
-          </a>
+          {loggedIn ? (
+            <>
+              <span className="navbar-user">Xin chào!</span>
+              <button onClick={handleLogout} className="navbar-logout">
+                Đăng xuất
+              </button>
+            </>
+          ) : (
+            <>
+              <a href="/login" className="navbar-login">
+                Đăng nhập
+              </a>
+              <a href="/register" className="navbar-register">
+                Đăng ký
+              </a>
+            </>
+          )}
         </div>
       </div>
     </header>

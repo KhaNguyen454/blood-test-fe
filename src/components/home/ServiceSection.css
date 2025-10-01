@@ -4,8 +4,8 @@
 }
 .service-section-content {
   width: calc(100vw - 48px);
-  margin: 0 24px;
-  text-align: center;
+  /* margin: 0 24px; */
+  /* text-align: center; */
 }
 .service-badge {
   display: inline-block;
@@ -16,6 +16,7 @@
   padding: 4px 16px;
   font-size: 0.95rem;
   margin-bottom: 18px;
+  text-align: center;
 }
 .service-title {
   font-size: 2rem;
@@ -23,6 +24,7 @@
   font-family: 'Geist', 'Inter', Arial, sans-serif;
   color: #22223b;
   margin-bottom: 8px;
+  text-align: center;
 }
 .service-desc {
   font-size: 1.1rem;
@@ -30,6 +32,7 @@
   margin-bottom: 32px;
   font-weight: 400; /* Geist Regular */
   font-family: 'Geist', 'Inter', Arial, sans-serif;
+  text-align: center;
 }
 .service-cards {
   display: flex;
