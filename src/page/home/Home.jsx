@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import HeroSection from "../../components/home/HeroSection";
 import ServiceSection from "../../components/home/ServiceSection";
-import DoctorSection from "../../components/home/DoctorSection";
+import EquipmentSection from "../../components/home/EquipmentSection";
 import BlogSection from "../../components/home/BlogSection";
 import CallToActionSection from "../../components/home/CallToActionSection";
 import Footer from "../../components/footer/Footer";
@@ -36,7 +36,7 @@ function Home() {
         <ServiceSection />
       </section>
       <section id="doctors" className="section-animate">
-        <DoctorSection />
+        <EquipmentSection />
       </section>
       <section id="blog" className="section-animate">
         <BlogSection />

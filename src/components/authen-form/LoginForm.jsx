@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Checkbox, Form, Input, Card } from "antd";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { demoLogin } from "../../utils/auth";
+import { setUserData as saveUserData } from "../../utils/auth";
 // import { useDispatch } from "react-redux";
 // import { login } from "../../redux/features/userSlice";
 // import { toast } from "react-toastify";
@@ -14,17 +14,31 @@ const LoginForm = ({ errorMessage }) => {
   // const dispatch = useDispatch();
 
   const onFinish = async (values) => {
-    // Xử lý đăng nhập ở đây, ví dụ chỉ chuyển trang sau khi submit thành công
-    console.log("Login data:", values);
-
-    // Demo: Lưu token và chuyển hướng
-    demoLogin();
-    navigate("/booking"); // Chuyển đến trang đặt lịch sau khi đăng nhập
+    // Giả lập gọi API đăng nhập thành công
+    // Thay đoạn này bằng gọi API thực tế của bạn
+    const userData = {
+      email: values.email,
+      fullname: "Nguyễn Văn An",
+      patientId: "550e8400",
+      gender: "Nam",
+      age: 40,
+      phone: "0912345678",
+      birthday: "15 tháng 3, 1985",
+      address: "123 Đường Lê Lợi, Quận 1, TP.HCM",
+      idCard: "079085001234",
+      healthInsurance: "BH-2024-001234",
+      registrationDate: "15 tháng 1, 2024",
+      avatar: "", // Có thể cập nhật sau
+    };
+    // Lưu user vào localStorage sử dụng auth utility
+    saveUserData(userData);
+    // Chuyển về trang chủ
+    navigate("/");
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Login failed:", errorInfo);
-  };
+  // const onFinishFailed = (errorInfo) => {
+  //   // Xử lý lỗi nếu cần
+  // };
 
   return (
     <div className="auth-login-container">
@@ -84,45 +98,29 @@ const LoginForm = ({ errorMessage }) => {
             )}
 
             <Form
-              name="login-form"
-              layout="vertical"
-              initialValues={{ remember: true }}
+              name="login"
               onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
+              // onFinishFailed={onFinishFailed}
+              layout="vertical"
               className="auth-login-form"
             >
               <Form.Item
                 label="Email"
                 name="email"
-                className="auth-login-form-item"
                 rules={[
                   { required: true, message: "Vui lòng nhập email!" },
                   { type: "email", message: "Email không hợp lệ!" },
                 ]}
               >
-                <Input
-                  placeholder="Nhập email của bạn"
-                  className="auth-login-input"
-                  size="large"
-                />
+                <Input placeholder="Nhập email của bạn" size="large" />
               </Form.Item>
-
               <Form.Item
                 label="Mật khẩu"
                 name="password"
-                className="auth-login-form-item"
-                rules={[
-                  { required: true, message: "Vui lòng nhập mật khẩu!" },
-                  { min: 6, message: "Mật khẩu phải ít nhất 6 ký tự!" },
-                ]}
+                rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
               >
-                <Input.Password
-                  placeholder="Nhập mật khẩu"
-                  className="auth-login-input"
-                  size="large"
-                />
+                <Input.Password placeholder="Nhập mật khẩu" size="large" />
               </Form.Item>
-
               <Form.Item
                 name="remember"
                 valuePropName="checked"

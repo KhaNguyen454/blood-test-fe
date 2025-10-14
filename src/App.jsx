@@ -5,6 +5,7 @@ import HomePage from "./page/home/Home";
 import BookingPage from "./page/booking/Booking";
 import ResultsPage from "./page/results/Results";
 import HistoryPage from "./page/history/History";
+import ProfilePage from "./components/profile/ProfilePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
     {
       path: "history",
       element: <HistoryPage />,
+    },
+    {
+      path: "profile",
+      element: <ProfilePage />,
     },
   ]);
 

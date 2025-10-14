@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { isAuthenticated } from "../../utils/auth";
 import BookingNavbar from "../../components/booking/BookingNavbar";
 import BookingHeader from "../../components/booking/BookingHeader";
 import PackageSelection from "../../components/booking/PackageSelection";
@@ -10,15 +11,18 @@ function Booking() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Kiểm tra trạng thái đăng nhập (giả lập)
+  // Kiểm tra trạng thái đăng nhập
   useEffect(() => {
-    // Trong thực tế, bạn sẽ kiểm tra token hoặc session
     const checkLoginStatus = () => {
-      const token = localStorage.getItem("authToken");
-      setIsLoggedIn(!!token);
+      const loggedIn = isAuthenticated();
+      setIsLoggedIn(loggedIn);
     };
 
     checkLoginStatus();
+
+    // Lắng nghe sự thay đổi trong localStorage
+    window.addEventListener("storage", checkLoginStatus);
+    return () => window.removeEventListener("storage", checkLoginStatus);
   }, []);
 
   const handlePackageSelect = (packageId) => {
