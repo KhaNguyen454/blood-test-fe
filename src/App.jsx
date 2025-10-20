@@ -1,12 +1,16 @@
 import "./App.css";
-import LoginPage from "./page/login/Login";
-import RegisterPage from "./page/register/Register";
-import HomePage from "./page/home/Home";
-import BookingPage from "./page/booking/Booking";
-import ResultsPage from "./page/results/Results";
-import HistoryPage from "./page/history/History";
+import LoginPage from "./pages/login/Login";
+import RegisterPage from "./pages/register/Register";
+import HomePage from "./pages/home/Home";
+import BookingPage from "./pages/booking/Booking";
+import ResultsPage from "./pages/results/Results";
+import HistoryPage from "./pages/history/History";
 import ProfilePage from "./components/profile/ProfilePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Booking from "./pages/booking/Booking";
+import CatalogSelection from "./components/booking/CatalogSelection";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +41,14 @@ function App() {
     {
       path: "profile",
       element: <ProfilePage />,
+    },
+    {
+      path: "/booking",
+      element: <Booking />,
+    },
+    {
+      path: "/booking/catalog",
+      element: <CatalogSelection />,
     },
   ]);
 
