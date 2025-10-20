@@ -2,43 +2,33 @@ import React from "react";
 import { Button, Checkbox, Form, Input, Card } from "antd";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { setUserData as saveUserData } from "../../utils/auth";
-// import { useDispatch } from "react-redux";
-// import { login } from "../../redux/features/userSlice";
-// import { toast } from "react-toastify";
-// import api from "../../configs/axios";
-// import { GoogleLogin } from "@react-oauth/google";
+import { toast } from "react-toastify"; // Import toast
 
 const LoginForm = ({ errorMessage }) => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const onFinish = async (values) => {
-    // Giả lập gọi API đăng nhập thành công
-    // Thay đoạn này bằng gọi API thực tế của bạn
-    const userData = {
-      email: values.email,
-      fullname: "Nguyễn Văn An",
-      patientId: "550e8400",
-      gender: "Nam",
-      age: 40,
-      phone: "0912345678",
-      birthday: "15 tháng 3, 1985",
-      address: "123 Đường Lê Lợi, Quận 1, TP.HCM",
-      idCard: "079085001234",
-      healthInsurance: "BH-2024-001234",
-      registrationDate: "15 tháng 1, 2024",
-      avatar: "", // Có thể cập nhật sau
-    };
-    // Lưu user vào localStorage sử dụng auth utility
-    saveUserData(userData);
-    // Chuyển về trang chủ
-    navigate("/");
-  };
+    try {
+      // Giả lập gọi API đăng nhập
+      // const response = await api.post('/login', values);
+      // const userData = response.data;
 
-  // const onFinishFailed = (errorInfo) => {
-  //   // Xử lý lỗi nếu cần
-  // };
+      // Giả lập thành công
+      const userData = { email: values.email, fullname: "" };
+      localStorage.setItem("user", JSON.stringify(userData));
+
+      // Hiển thị thông báo thành công
+      toast.success("Đăng nhập thành công!");
+
+      // Chờ một chút rồi chuyển trang để người dùng kịp thấy thông báo
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    } catch (error) {
+      // Hiển thị thông báo lỗi
+      toast.error("Email hoặc mật khẩu không chính xác!");
+    }
+  };
 
   return (
     <div className="auth-login-container">
@@ -100,7 +90,6 @@ const LoginForm = ({ errorMessage }) => {
             <Form
               name="login"
               onFinish={onFinish}
-              // onFinishFailed={onFinishFailed}
               layout="vertical"
               className="auth-login-form"
             >
@@ -152,15 +141,6 @@ const LoginForm = ({ errorMessage }) => {
                   Đăng nhập
                 </Button>
               </Form.Item>
-
-              {/* Nút đăng nhập Google - đã comment */}
-              {/* <div style={{ marginBottom: 16, textAlign: "center"  }}>
-                <GoogleLogin
-                  onSuccess={handleGoogleLoginSuccess}
-                  onError={() => toast.error("Đăng nhập Google thất bại!")}
-                  width="100%"
-                />
-              </div> */}
 
               <div className="auth-login-register-link">
                 Chưa có tài khoản?

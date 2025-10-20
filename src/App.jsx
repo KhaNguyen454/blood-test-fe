@@ -12,6 +12,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Booking from "./pages/booking/Booking";
 import CatalogSelection from "./components/booking/CatalogSelection";
 
+import UserManagementPage from "./page/admin/user/UserManagementPage";
+import DashboardPage from "./page/admin/dashboard/DashboardPage";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import CSS
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -50,9 +56,33 @@ function App() {
       path: "/booking/catalog",
       element: <CatalogSelection />,
     },
+    {
+      path: "admin/dashboard",
+      element: <DashboardPage />,
+    },
+    {
+      path: "admin/users",
+      element: <UserManagementPage />,
+    },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </>
+  );
 }
 
 export default App;
