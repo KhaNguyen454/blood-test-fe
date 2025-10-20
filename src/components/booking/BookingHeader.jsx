@@ -4,9 +4,10 @@ import "./BookingHeader.css";
 function BookingHeader({ title, subtitle, currentStep }) {
   const steps = [
     { id: 1, label: "Chọn gói", name: "Chọn gói" },
-    { id: 2, label: "Chọn địa điểm", name: "Chọn địa điểm" },
-    { id: 3, label: "Chọn giờ", name: "Chọn giờ" },
-    { id: 4, label: "Xác nhận", name: "Xác nhận" },
+    { id: 2, label: "Chọn giờ", name: "Chọn giờ" },
+    { id: 3, label: "Xác nhận", name: "Xác nhận" },
+    { id: 4, label: "Thanh toán", name: "Thanh toán" },
+    { id: 5, label: "Thông tin", name: "Thông tin" },
   ];
 
   return (
