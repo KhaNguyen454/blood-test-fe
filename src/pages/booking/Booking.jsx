@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { isAuthenticated } from "../../utils/auth";
+import { isAuthenticated } from "../../utils/auth"; // <-- login check util (returns boolean)
 import BookingNavbar from "../../components/booking/BookingNavbar";
 import BookingHeader from "../../components/booking/BookingHeader";
 import PackageSelection from "../../components/booking/PackageSelection";
@@ -37,6 +37,8 @@ function Booking() {
   // Kiểm tra trạng thái đăng nhập
   useEffect(() => {
     const checkLoginStatus = () => {
+      // CHECKPOINT: đây là nơi gọi isAuthenticated() để update trạng thái isLoggedIn
+      // Nếu muốn debug, console.log(isAuthenticated()) tại đây.
       const loggedIn = isAuthenticated();
       setIsLoggedIn(loggedIn);
     };
@@ -118,6 +120,7 @@ function Booking() {
 
   // Nếu chưa đăng nhập, hiển thị yêu cầu đăng nhập
   if (!isLoggedIn) {
+    // EARLY RETURN: khi isLoggedIn === false, component sẽ return LoginRequirement và không render phần booking
     return (
       <div className="booking-container">
         <BookingNavbar />
@@ -135,14 +138,17 @@ function Booking() {
   // Nếu đã đăng nhập, hiển thị trang đặt lịch
   return (
     <div className="booking-container">
+      {currentStep !== 5}
       <BookingNavbar />
       <div className="booking-content">
-        <BookingHeader
-          title="Đặt lịch xét nghiệm"
-          subtitle="Chọn gói xét nghiệm, địa điểm và thời gian phù hợp với bạn"
-          currentStep={currentStep}
-          steps={steps}
-        />
+        {currentStep !== 5 && (
+          <BookingHeader
+            title="Đặt lịch xét nghiệm"
+            subtitle="Chọn gói xét nghiệm, địa điểm và thời gian phù hợp với bạn"
+            currentStep={currentStep}
+            steps={steps}
+          />
+        )}
 
         {/* Render nội bộ không reload trang theo currentStep */}
         {currentStep === 1 && (

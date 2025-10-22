@@ -37,8 +37,8 @@
 /* Popular badge */
 .popular-badge {
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 6px;
+  top: 5px;
   background: #3b82f6;
   color: #fff;
   padding: 6px 10px;

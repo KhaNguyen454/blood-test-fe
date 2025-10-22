@@ -3,17 +3,16 @@ import LoginPage from "./pages/login/Login";
 import RegisterPage from "./pages/register/Register";
 import HomePage from "./pages/home/Home";
 import BookingPage from "./pages/booking/Booking";
-import ResultsPage from "./pages/results/Results";
 import HistoryPage from "./pages/history/History";
 import ProfilePage from "./components/profile/ProfilePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Booking from "./pages/booking/Booking";
 import CatalogSelection from "./components/booking/CatalogSelection";
 
-import UserManagementPage from "./page/admin/user/UserManagementPage";
-import DashboardPage from "./page/admin/dashboard/DashboardPage";
+import UserManagementPage from "./pages/admin/user/UserManagementPage";
+import DashboardPage from "./pages/admin/dashboard/DashboardPage";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
@@ -35,10 +34,6 @@ function App() {
     {
       path: "booking",
       element: <BookingPage />,
-    },
-    {
-      path: "results",
-      element: <ResultsPage />,
     },
     {
       path: "history",

@@ -3,7 +3,7 @@ import { Button, Checkbox, Form, Input, Card } from "antd";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Import toast
-
+import { setUserData } from "../../utils/auth";
 const LoginForm = ({ errorMessage }) => {
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const LoginForm = ({ errorMessage }) => {
       // Giả lập thành công
       const userData = { email: values.email, fullname: "" };
       localStorage.setItem("user", JSON.stringify(userData));
-
+      setUserData(userData);
       // Hiển thị thông báo thành công
       toast.success("Đăng nhập thành công!");
 
@@ -26,7 +26,7 @@ const LoginForm = ({ errorMessage }) => {
       }, 1500);
     } catch (error) {
       // Hiển thị thông báo lỗi
-      toast.error("Email hoặc mật khẩu không chính xác!");
+      toast.error(error.message);
     }
   };
 
