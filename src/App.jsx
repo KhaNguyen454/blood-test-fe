@@ -11,6 +11,7 @@ import DashboardPage from "./page/admin/dashboard/DashboardPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
+import MedicalRecord from "./page/medical-record/MedicalRecord";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ function App() {
     {
       path: "admin/users",
       element: <UserManagementPage />,
+    },
+    {
+      path: "medical-record",
+      element: <MedicalRecord />,
     },
   ]);
 

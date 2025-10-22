@@ -572,7 +572,10 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <button className="medical-record-view-btn">
+                  <button
+                    className="medical-record-view-btn"
+                    onClick={() => navigate("/medical-record")}
+                  >
                     <svg
                       className="view-icon"
                       viewBox="0 0 24 24"
