@@ -172,15 +172,24 @@ export default function BookingHistory() {
                     <div className="section">
                       <h4>Thông tin cá nhân</h4>
                       <div className="info-row">
-                        <span className="label">Họ và tên</span>
+                        <div className="info-row-1">
+                          <img src="src\assets\icon\User.svg" alt="User" />
+                          <span className="label">Họ và tên</span>
+                        </div>
                         <span className="value">{b.patient.name}</span>
                       </div>
                       <div className="info-row">
-                        <span className="label">Email</span>
+                        <div className="info-row-1">
+                          <img src="src\assets\icon\Mail.svg" alt="Email" />
+                          <span className="label">Email</span>
+                        </div>
                         <span className="value">{b.patient.email}</span>
                       </div>
                       <div className="info-row">
-                        <span className="label">Điện thoại</span>
+                        <div className="info-row-1">
+                          <img src="src\assets\icon\Phone.svg" alt="Phone" />{" "}
+                          <span className="label">Điện thoại</span>
+                        </div>
                         <span className="value">{b.patient.phone}</span>
                       </div>
                     </div>
@@ -190,7 +199,13 @@ export default function BookingHistory() {
                     <div className="section">
                       <h4>Chi tiết đặt lịch</h4>
                       <div className="info-row">
-                        <span className="label">Gói</span>
+                        <div className="info-row-1">
+                          <img
+                            src="src\assets\icon\Document_Gray.svg"
+                            alt="Document"
+                          />
+                          <span className="label">Gói</span>
+                        </div>
                         <span className="value">{b.service}</span>
                       </div>
                       {/* <div className="info-row">
@@ -210,11 +225,17 @@ export default function BookingHistory() {
                     <div className="section payment">
                       <h4>Thông tin thanh toán</h4>
                       <div className="info-row">
-                        <span className="label">Hình thức</span>
+                        <div className="info-row-1">
+                          <img src="src\assets\icon\Pay.svg" alt="Pay" />
+                          <span className="label">Hình thức</span>
+                        </div>
                         <span className="value">Tiền mặt</span>
                       </div>
                       <div className="info-row">
-                        <span className="label">Tổng tiền</span>
+                        <div className="info-row-1">
+                          <img src="src\assets\icon\Pay.svg" alt="Pay" />
+                          <span className="label">Tổng tiền</span>
+                        </div>
                         <span className="value">
                           {b.price.toLocaleString("vi-VN")} ₫
                         </span>
