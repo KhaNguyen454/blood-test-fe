@@ -287,11 +287,19 @@
 }
 
 /* Info rows */
+.info-row-1 {
+  display: flex;
+}
+.info-row-1 img {
+  position: relative;
+  left: 15px;
+  bottom: 1px;
+}
 .info-row {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 3px;
+  margin-bottom: 10px;
 }
 .info-row .label {
   font-size: 13px;
@@ -304,7 +312,6 @@
   font-size: 15px;
   color: #111827;
   font-weight: 500;
-  margin-left: 22px;
 }
 
 /* Icons for labels */
@@ -355,6 +362,10 @@
 .result-box.ready {
   background: #fff;
   border-color: #6b7280;
+}
+.result-box.cancelled {
+  background-color: #fdf2f2;
+  border-color: red;
 }
 
 /* Cancelled no-result box */
