@@ -35,7 +35,7 @@ function CatalogSelection({ setPackageMode, onContinue }) {
       >
         <div style={{ display: "flex", gap: 12 }}>
           <button
-            className="btn-primary"
+            className="btn-primary-1"
             onClick={() => setPackageMode && setPackageMode("preset")}
           >
             Chọn gói có sẵn

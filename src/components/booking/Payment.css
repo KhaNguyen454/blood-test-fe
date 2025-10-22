@@ -75,7 +75,8 @@
 }
 
 .form-grid input {
-  width: 100%;
+  display: flex;
+  width: 96%;
   margin-top: 6px;
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 8px;
@@ -88,7 +89,24 @@
 .form-grid input:focus {
   border-color: #2563eb;
 }
+.info-card-1 {
+  display: flex;
+  gap: 20px;
+}
+.info-card-1 label {
+  flex: 1; /* chia đều: 1 và 1 */
+  min-width: 0; /* bắt buộc để input % không gây overflow trong flex */
+}
 
+/* nếu muốn tỉ lệ khác (ví dụ: email lớn hơn phone) */
+.info-card-1 label:first-child {
+  flex: 1;
+}
+
+/* input luôn chiếm đầy label */
+.info-card-1 label input {
+  width: 91%;
+}
 /* ---------- Payment Method ---------- */
 .payment-methods {
   display: flex;
@@ -103,6 +121,12 @@
   cursor: pointer;
   color: #0f172a;
   font-size: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+}
+.method-item span {
+  font-weight: 700;
 }
 
 .method-item input {
@@ -123,7 +147,7 @@
 }
 
 .card-inputs input {
-  width: 100%;
+  width: 96%;
   margin-top: 4px;
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 8px;
@@ -139,11 +163,17 @@
 
 .small-row {
   display: flex;
-  gap: 12px;
+  gap: 20px;
 }
 
 .small-row label {
   flex: 1;
+}
+.small-row label:first-child {
+  flex: 1;
+}
+.small-row label input {
+  width: 92%;
 }
 
 /* ---------- Back Button ---------- */
@@ -183,9 +213,11 @@
   color: #0f172a;
   font-size: 14px;
 }
-
+.summary-line span {
+  color: #4a5565;
+}
 .summary-line strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .summary-total {

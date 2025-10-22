@@ -57,23 +57,25 @@ export default function Payment({
                   onChange={handleChange}
                 />
               </label>
-              <label>
-                Email<span>*</span>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                />
-              </label>
-              <label>
-                Số điện thoại<span>*</span>
-                <input
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                />
-              </label>
+              <div className="info-card-1">
+                <label>
+                  Email<span>*</span>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  Số điện thoại<span>*</span>
+                  <input
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
             </div>
           </div>
 
@@ -89,6 +91,7 @@ export default function Payment({
                   checked={form.paymentMethod === "credit"}
                   onChange={handleChange}
                 />
+                <img src="src\assets\icon\ATM.svg" />
                 <span>Thẻ tín dụng/ghi nợ</span>
               </label>
 
@@ -100,6 +103,7 @@ export default function Payment({
                   checked={form.paymentMethod === "momo"}
                   onChange={handleChange}
                 />
+                <img src="src\assets\icon\Momo.svg" />
                 <span>Ví MoMo</span>
               </label>
 
@@ -111,6 +115,7 @@ export default function Payment({
                   checked={form.paymentMethod === "bank"}
                   onChange={handleChange}
                 />
+                <img src="src\assets\icon\bank.svg" />
                 <span>Chuyển khoản ngân hàng</span>
               </label>
             </div>

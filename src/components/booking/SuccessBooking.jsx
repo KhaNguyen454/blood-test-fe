@@ -71,24 +71,20 @@ export default function SuccessBooking({
           <div className="sb-receipt">
             <div className="sb-receipt-top">
               <div className="sb-code">
-                Mã đặt lịch: <span className="sb-code-val">{orderCode}</span>
+                Mã đặt lịch <br />{" "}
+                <span className="sb-code-val">{orderCode}</span>
               </div>
-              <div className="sb-total">{formattedTotal}</div>
+              <div className="sb-code">
+                Tổng Thanh Toán <br />
+                <span className="sb-total">{formattedTotal}</span>
+              </div>
             </div>
 
             <div className="sb-receipt-body">
               <div className="sb-row">
                 <div className="sb-icon">
                   {/* icon list */}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M3 7h18M6 11h12M9 15h6"
-                      stroke="#2563EB"
-                      strokeWidth="1.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src="src\assets\icon\SVG_margin.svg" />
                 </div>
                 <div className="sb-text">
                   <div className="sb-label">Gói xét nghiệm</div>
@@ -98,37 +94,23 @@ export default function SuccessBooking({
 
               <div className="sb-row">
                 <div className="sb-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M21 10.5c0 6-9 11-9 11s-9-5-9-11a9 9 0 1118 0z"
-                      stroke="#2563EB"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src="src\assets\icon\Location.svg" />
                 </div>
                 <div className="sb-text">
                   <div className="sb-label">Địa điểm</div>
                   <div className="sb-value">
                     Phòng khám Xét nghiệm Y tế
                     <br />
-                    123 Nguyễn Huệ, Q.1, TP.HCM
+                    <span className="sb-value-1">
+                      123 Nguyễn Huệ, Q.1, TP.HCM
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="sb-row">
                 <div className="sb-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M8 7V3M16 7V3M3 11h18M5 21h14"
-                      stroke="#2563EB"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src="src\assets\icon\Calender.svg" />
                 </div>
                 <div className="sb-text">
                   <div className="sb-label">Ngày khám</div>
@@ -140,15 +122,7 @@ export default function SuccessBooking({
 
               <div className="sb-row">
                 <div className="sb-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M12 6v6l4 2"
-                      stroke="#2563EB"
-                      strokeWidth="1.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src="src\assets\icon\Clock.svg" />
                 </div>
                 <div className="sb-text">
                   <div className="sb-label">Giờ khám</div>

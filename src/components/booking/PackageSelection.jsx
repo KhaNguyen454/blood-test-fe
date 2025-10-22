@@ -48,14 +48,11 @@ function PackageSelection({
   const selectedPkg = packages.find((p) => p.id === selectedPackage) || null;
   const testsCount = selectedPkg ? selectedPkg.includes.length : 0;
 
-  // Nếu includes là ID -> tính tổng từ catalog (ưu tiên), fallback về price chuỗi cũ
+  // Tổng tiền: dùng trực tiếp giá của gói (nếu có), fallback parse từ chuỗi
   const totalPriceNumber = selectedPkg
-    ? selectedPkg.includes.reduce((sum, id) => {
-        const c = catalog.find((it) => it.id === id);
-        if (c && typeof c.price === "number") return sum + c.price;
-        // fallback: dùng selectedPkg.price nếu không tìm được trong catalog
-        return sum + parsePrice(selectedPkg.price);
-      }, 0)
+    ? typeof selectedPkg.price === "number"
+      ? selectedPkg.price
+      : parsePrice(selectedPkg.price)
     : 0;
 
   const formattedTotal = totalPriceNumber
@@ -75,7 +72,7 @@ function PackageSelection({
       >
         <div style={{ display: "flex", gap: 12 }}>
           <button
-            className={`btn-primary ${mode === "preset" ? "active" : ""}`}
+            className={`btn-primary-1 ${mode === "preset" ? "active" : ""}`}
             onClick={() => setPackageMode && setPackageMode("preset")}
             type="button"
           >
