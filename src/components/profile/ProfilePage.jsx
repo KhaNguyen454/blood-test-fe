@@ -591,7 +591,7 @@ export default function ProfilePage() {
                 </div>
               </div>
 
-              <button className="profile-update-btn" onClick={handleOpenModal}>
+              {/* <button className="profile-update-btn" onClick={handleOpenModal}>
                 <svg
                   className="update-icon"
                   viewBox="0 0 24 24"
@@ -603,7 +603,7 @@ export default function ProfilePage() {
                   <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                 </svg>
                 Cập nhật
-              </button>
+              </button> */}
             </div>
           </div>
         )}
